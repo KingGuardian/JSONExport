@@ -55,7 +55,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     
     //Connected to Utility Methods check box
     @IBOutlet weak var generateUtilityMethods: NSButtonCell!
-    
     //Connected to root class name field
     @IBOutlet weak var classNameField: NSTextFieldCell!
     
@@ -88,7 +87,23 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     
     //Holds list of the generated files
     var files : [FileRepresenter] = [FileRepresenter]()
-    
+
+    //生成MVC类
+
+    @IBOutlet weak var generateMVCClass: NSButton!
+
+    @IBOutlet weak var mvcModelNameField: NSTextField!
+
+    @IBOutlet weak var mvcCellModelNameField: NSTextField!
+
+    @IBOutlet weak var mvcCellName: NSTextField!
+
+    @IBOutlet weak var mvcControllerField: NSTextField!
+
+    @IBOutlet weak var mvcPackageField: NSTextField!
+
+    @IBOutlet weak var mvcPlatform: NSPopUpButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.isEnabled = false
@@ -478,7 +493,17 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         
         return cell
     }
-    
-    
-    
+
+    //MVC生成参数回调
+    @IBAction func mvcGenerateChanged(_ sender: Any) {
+        print("cccc")
+    }
+
+    @IBAction func mvcTextChanged(_ sender: Any) {
+        print("ssss")
+    }
+
+    @IBAction func mvcPlatformSelected(_ sender: Any) {
+        print("ddddd")
+    }
 }
